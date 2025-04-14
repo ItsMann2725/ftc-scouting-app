@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";         // Form
-import Viewer from "./Viewer";   // Public View
+import Viewer from "./viewer";   // Public View
 import "./App.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
