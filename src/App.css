@@ -6,6 +6,7 @@ html, body, #root {
   margin: 0;
   padding: 0;
   display: flex;
+  font-family: 'Inter', sans-serif;
   justify-content: center;  /* ✅ center horizontally */
   align-items: flex-start;  /* or use center if you want vertical centering too */
   background-color: #111827; /* match your theme */
