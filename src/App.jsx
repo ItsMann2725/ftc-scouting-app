@@ -4,6 +4,8 @@ import db from "./firebase";
 import "./App.css";
 
 export default function App() {
+  console.log("Form is rendering");
+
   const [entries, setEntries] = useState([]);
   const [form, setForm] = useState({
     team: "",
