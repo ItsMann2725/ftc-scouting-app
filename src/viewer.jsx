@@ -60,7 +60,7 @@ export default function Viewer() {
   return (
     <div className="app-container">
       <div className="app-wrapper">
-        <h1 className="title">Public Viewer – FTC Scouting</h1>
+        <h1 className="title">Public Viewer – 5979 FIRST Championship Scouting</h1>
         {orderedSections.map((section) => (
           <div key={section}>
             <h2 className={`section-header ${section.toLowerCase()}`}>{section} Section</h2>

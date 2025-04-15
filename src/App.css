@@ -9,7 +9,7 @@ html, body, #root {
   font-family: 'Inter', sans-serif;
   justify-content: center;  /* ✅ center horizontally */
   align-items: flex-start;  /* or use center if you want vertical centering too */
-  background-color: #28426d; /* match your theme */
+  background-color: #0a1c39; /* match your theme */
 }
 
 
@@ -52,7 +52,7 @@ label{
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
