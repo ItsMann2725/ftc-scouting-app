@@ -9,7 +9,7 @@ html, body, #root {
   font-family: 'Inter', sans-serif;
   justify-content: center;  /* ✅ center horizontally */
   align-items: flex-start;  /* or use center if you want vertical centering too */
-  background-color: #111827; /* match your theme */
+  background-color: #28426d; /* match your theme */
 }
 
 
@@ -56,6 +56,7 @@ label{
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
+  font-family: 'Jockey One';
   color:#fff;
 }
 
@@ -125,12 +126,13 @@ label{
 }
 
 .summary-card {
-  background-color: #1f2937;
+  background-color: #d6a531;
   border-radius: 0.75rem;
   padding: 1rem;
   margin-bottom: 1rem;
   text-align: left;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
 .section-header {
   font-size: 1.75rem;
