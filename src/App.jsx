@@ -8,7 +8,9 @@ export default function App() {
 
   const [entries, setEntries] = useState([]);
   const [form, setForm] = useState({
-    team: "",
+    teamName: "",
+    teamNumber: "",
+    pitLocation: "",      
     autoType: "Sample",
     autoCount: 0,
     autoParkPoints: 0,
@@ -17,6 +19,8 @@ export default function App() {
     endgamePoints: 0,
     notes: ""
   });
+  
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,9 +30,11 @@ export default function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // 🚨 Basic validation
+    //validation
     if (
-      !form.team.trim() ||
+      !form.teamName.trim() ||
+      !form.teamNumber.trim() ||
+      !form.pitLocation.trim() ||
       form.autoCount < 0 ||
       form.teleCount < 0 ||
       form.endgamePoints < 0
@@ -36,6 +42,7 @@ export default function App() {
       alert("Please fill in all required fields correctly.");
       return;
     }
+    
   
     const newEntry = { ...form };
   
@@ -93,23 +100,32 @@ export default function App() {
         
         
       <input
-  name="teamName"
-  value={form.teamName}
-  onChange={handleChange}
-  placeholder="Team Name"
-  className="input"
-  required
+        name="teamName"
+        value={form.teamName}
+        onChange={handleChange}
+        placeholder="Team Name"
+        className="input"
+        required
 
-/>
-<input
-  name="teamNumber"
-  value={form.teamNumber}
-  onChange={handleChange}
-  placeholder="Team Number"
-  className="input"
-  required
+      />
+      <input
+        name="teamNumber"
+        value={form.teamNumber}
+        onChange={handleChange}
+        placeholder="Team Number"
+        className="input"
+        required
 
-/>
+      />
+      <input
+        name="pitLocation"
+        value={form.pitLocation}
+        onChange={handleChange}
+        placeholder="Pit Location (Example: A06)"
+        className="input"
+        required
+
+      />
 
 
         <div className="field">
