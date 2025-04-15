@@ -64,7 +64,7 @@ export default function Viewer() {
         {orderedSections.map((section) => (
           <div key={section}>
             <h2 className={`section-header ${section.toLowerCase()}`}>{section} Section</h2>
-            {groupedEntries[section]?.length === 0 ? (
+            {!Array.isArray(groupedEntries[section]) || groupedEntries[section].length === 0 ? (
               <p>No teams in this section.</p>
             ) : (
               groupedEntries[section].map((entry, idx) => (
