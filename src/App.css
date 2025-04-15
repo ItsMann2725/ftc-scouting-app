@@ -47,13 +47,16 @@ html, body, #root {
   text-align: left;
 }
 
-
+label{
+  color: #fff;
+}
 
 .title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
+  color:#fff;
 }
 
 
