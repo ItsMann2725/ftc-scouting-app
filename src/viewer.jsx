@@ -4,14 +4,13 @@ import db from "./firebase";
 import "./App.css";
 
 export default function Viewer() {
-  const [entries, setEntries] = useState([]);
+  const [groupedEntries, setGroupedEntries] = useState({});
 
   useEffect(() => {
     async function fetchData() {
       const snapshot = await getDocs(collection(db, "entries"));
       const data = snapshot.docs.map(doc => doc.data());
 
-      // Group entries by section
       const grouped = {
         Jemison: [],
         Franklin: [],
@@ -38,7 +37,7 @@ export default function Viewer() {
         if (grouped[section]) grouped[section].push(entry);
       });
 
-      // Sort within each section
+      // Sort each section by pitLocation
       Object.keys(grouped).forEach((key) => {
         grouped[key].sort((a, b) => {
           const pitA = a.pitLocation?.toUpperCase() || "Z99";
@@ -50,8 +49,9 @@ export default function Viewer() {
         });
       });
 
-      setEntries(grouped);
+      setGroupedEntries(grouped);
     }
+
     fetchData();
   }, []);
 
@@ -64,10 +64,10 @@ export default function Viewer() {
         {orderedSections.map((section) => (
           <div key={section}>
             <h2 className={`section-header ${section.toLowerCase()}`}>{section} Section</h2>
-            {entries[section]?.length === 0 ? (
+            {groupedEntries[section]?.length === 0 ? (
               <p>No teams in this section.</p>
             ) : (
-              entries[section].map((entry, idx) => (
+              groupedEntries[section].map((entry, idx) => (
                 <div key={idx} className="summary-card">
                   <p><strong>Pit {entry.pitLocation?.toUpperCase() || "??"}</strong></p>
                   <p><strong>{entry.teamName} ({entry.teamNumber})</strong></p>
